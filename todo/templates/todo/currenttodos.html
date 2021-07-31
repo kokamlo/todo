@@ -3,4 +3,19 @@
 
 
 <h1> wellcome to the house of pleasure </h1>
+<ul>
+
+ {% for i in todos %}
+
+ <li>
+    <a href="{% url 'viewtodo' i.id %}">
+    {% if i.checkimportant %}<b>{% endif %} {{ i.title }}:
+    {% if i.checkimportant %}</b>{% endif %}
+    {% if i.desc %}<br>{{ i.desc }} {% endif %}
+    </a>
+ </li>
+
+
+ {% endfor %}
+</ul>
 {% endblock %}
